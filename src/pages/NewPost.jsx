@@ -1,7 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Input, Textarea, Heading } from '@chakra-ui/react'
+import { Input, Textarea, Heading, Center, Box, FormControl, FormLabel } from '@chakra-ui/react'
 import baseUrl from "../apis/baseUrl";
+import PrimaryButton from "../components/PrimaryButton";
 
 const NewPost = () => {
 
@@ -29,52 +30,56 @@ const NewPost = () => {
 
   return (
     <>
-      <div>
-        <Heading>イベント登録</Heading>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div>
-            <label htmlFor="title">タイトル</label>
+      <Box>
+        <Center>
+          <Heading>イベント登録</Heading>
+        </Center>
+        <FormControl as="form" onSubmit={handleSubmit(onSubmit)}>
+          <Box>
+            <FormLabel htmlFor="title" fontWeight="bold">タイトル</FormLabel>
             <Input id="title" {...register("title", { required: true })} />
             {
               errors.title &&
-              <span>※タイトルを入力してください</span>
+              <Box as="span" color="red">※タイトルを入力してください</Box >
             }
-          </div>
-          <div>
-            <label htmlFor="owner">主催者</label>
+          </Box>
+          <Box>
+            <FormLabel htmlFor="owner" fontWeight="bold">主催者</FormLabel>
             <Input id="owner" {...register("owner", { required: true })} />
             {
               errors.owner &&
-              <span>※主催者を入力してください</span>
+              <Box as="span" color="red" >※主催者を入力してください</Box>
             }
-          </div>
-          <div>
-            <label htmlFor="date">日時</label>
+          </Box>
+          <Box>
+            <FormLabel htmlFor="date" fontWeight="bold">日時</FormLabel>
             <Input type="datetime-local" id="date" {...register("date", { required: true })} />
             {
               errors.date &&
-              <span>※日時を指定してください</span>
+              <Box as="span" color="red" >※日時を指定してください</Box >
             }
-          </div>
-          <div>
-            <label htmlFor="note">note</label>
+          </Box>
+          <Box>
+            <FormLabel htmlFor="note" fontWeight="bold">note</FormLabel>
             <Textarea id="note" {...register("note", { required: true })} />
             {
               errors.note &&
-              <span>※noteを入力してください</span>
+              <Box as="span" color="red" >※noteを入力してください</Box >
             }
-          </div>
-          <div>
-            <label htmlFor="url">url</label>
+          </Box>
+          <Box>
+            <FormLabel htmlFor="url" fontWeight="bold">url</FormLabel>
             <Input id="url" {...register("url", { required: true })} />
             {
               errors.url &&
-              <span>※urlを貼ってください</span>
+              <Box as="span" color="red" >※urlを貼ってください</Box >
             }
-          </div>
-          <Input type="submit" value="登録する" />
-        </form>
-      </div>
+          </Box>
+          <Center marginTop={5}>
+            <PrimaryButton type="submit">登録する</PrimaryButton>
+          </Center>
+        </FormControl>
+      </Box>
     </>
   )
 }
