@@ -27,11 +27,11 @@ const Detail = () => {
   }, [])
   console.log(posts)
   let leftDate = '';
-  const count = () => {
+  const count = (time) => {
     let timer = setInterval(function () {
       const nowTime = moment();
       console.log(nowTime)
-      const setTime = moment(new Date('2022-06-08 17:00:00'));
+      const setTime = moment(new Date(time));
       console.log(setTime)
       const left_days = setTime.diff(nowTime, 'days');
       const left_hours = setTime.diff(nowTime, 'hours') % 24;
@@ -42,7 +42,7 @@ const Detail = () => {
     }, 1000)
     return timer
   }
-  // count()//引数にposts.date
+  // count(posts.date)//引数にposts.date
 
 
   const handleDelete = () => {
@@ -63,11 +63,11 @@ const Detail = () => {
         _hover={{ cursor: "pointer", opacity: "0.8" }}
       >
         <Stack textAlign="center">
-          <Text color="teal.900" fontSize="lg" fontWeight="bold">成果物発表</Text>
-          <Text color="teal.900" fontSize="lg">team22</Text>
-          <Text color="teal.900" fontSize="lg" fontWeight="bold">{leftDate}</Text>
+          <Text color="teal.900" fontSize="lg" fontWeight="bold">{posts.title}</Text>
+          <Text color="teal.900" fontSize="lg">{posts.owner}</Text>
+          <Text color="teal.900" fontSize="lg" fontWeight="bold">{posts.date}</Text>
           <Text color="teal.900" fontSize="sm">texttexttexttexttexttexttexttexttexttextexttexttexttexttexttext</Text>
-          <Text color="teal.900" fontSize="sm">url</Text>
+          <Text color="teal.900" fontSize="sm">{posts.url}</Text>
         </Stack>
         <Box textAlign="right">
           <PrimaryButton onClick={handleDelete}>削除</PrimaryButton>
