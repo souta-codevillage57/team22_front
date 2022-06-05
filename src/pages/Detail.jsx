@@ -9,7 +9,7 @@ import moment from "moment";
 const Detail = () => {
 
   const [posts, setPosts] = useState([]);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const params = useParams();
   const event_id = params.id;
   console.log(event_id)
@@ -75,7 +75,7 @@ const Detail = () => {
           <PrimaryButton onClick={handleDelete}>削除</PrimaryButton>
         </Box>
       </Box>
-      {/* <PrimaryButton onClick={() => { navigate('/') }}>ホームへ戻る</PrimaryButton> */}
+      <PrimaryButton onClick={() => { navigate('/') }}>ホームへ戻る</PrimaryButton>
     </>
   )
 }
