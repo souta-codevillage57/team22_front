@@ -18,9 +18,9 @@ function c(a){
 function Article(props) {
     var title=props.title
     var date=Math.trunc((new Date(props.date)-Date.now())/1000)
-    // if(date<0){
-    //     return 
-    // }
+    if(date<0){
+        return 
+    }
     if(title.length>13){
         title=title.substr(0,13)+"•••"
     }

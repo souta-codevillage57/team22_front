@@ -5,17 +5,16 @@ import baseUrl from '../apis/baseUrl';
 import { useState,useEffect } from 'react';
 
 var list=[
-  {id:"",title:"キックオフMTG@Zoom",date:"2022/05/27/18:00",},
-  {id:"",title:"ハッカソン開会式@Zoom",date:"2022/06/04/11:00",},
-  {id:"",title:"ハッカソン1日目〆会@Zoom",date:"2022/06/04/20:00",},
-  {id:"",title:"ハッカソン2日目朝会@Zoom",date:"2022/06/05/11:00",},
-  {id:"",title:"コードフリーズ",date:"2022/06/05/15:00",},
-  {id:"",title:"成果発表プレゼン資料作成・練習",date:"2022/06/05/15:00",},
-  {id:"",title:"【予選】ハッカソン成果発表@Zoom",date:"2022/06/05/16:00",},
-  {id:"",title:"【決勝】ハッカソン成果発表@Zoom",date:"2022/06/05/17:30",},
-  {id:"",title:"懇談会",date:"2022/06/05/19:00",}
+  {"owner":"tester","note":"ハッカソンについての予定です。","url":"https://talent.supporterz.jp/geekcamp/","title":"キックオフMTG@Zoom","date":"2022/05/27/18:00","delete_key":"hensyuu"},
+  {"owner":"tester","note":"ハッカソンについての予定です。","url":"https://talent.supporterz.jp/geekcamp/","title":"ハッカソン開会式@Zoom","date":"2022/06/04/11:00","delete_key":"hensyuu"},
+  {"owner":"tester","note":"ハッカソンについての予定です。","url":"https://talent.supporterz.jp/geekcamp/","title":"ハッカソン1日目〆会@Zoom","date":"2022/06/04/20:00","delete_key":"hensyuu"},
+  {"owner":"tester","note":"ハッカソンについての予定です。","url":"https://talent.supporterz.jp/geekcamp/","title":"ハッカソン2日目朝会@Zoom","date":"2022/06/05/11:00","delete_key":"hensyuu"},
+  {"owner":"tester","note":"ハッカソンについての予定です。","url":"https://talent.supporterz.jp/geekcamp/","title":"コードフリーズ","date":"2022/06/05/15:00","delete_key":"hensyuu"},
+  {"owner":"tester","note":"ハッカソンについての予定です。","url":"https://talent.supporterz.jp/geekcamp/","title":"成果発表プレゼン資料作成・練習","date":"2022/06/05/15:00","delete_key":"hensyuu"},
+  {"owner":"tester","note":"ハッカソンについての予定です。","url":"https://talent.supporterz.jp/geekcamp/","title":"【予選】ハッカソン成果発表@Zoom","date":"2022/06/05/16:00","delete_key":"hensyuu"},
+  {"owner":"tester","note":"ハッカソンについての予定です。","url":"https://talent.supporterz.jp/geekcamp/","title":"【決勝】ハッカソン成果発表@Zoom","date":"2022/06/05/17:30","delete_key":"hensyuu"},
+  {"owner":"tester","note":"ハッカソンについての予定です。","url":"https://talent.supporterz.jp/geekcamp/","title":"懇談会","date":"2022/06/05/19:00","delete_key":"hensyuu"}
 ]
-
 function Home() {
   const [contents,setContents] = useState([]);
   useEffect(()=>{
