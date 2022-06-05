@@ -1,6 +1,5 @@
 import '../css/Home.css';
 import Article from './Article';
-import axios from "axios";
 
 var contents=[
   {url:"/",title:"キックオフMTG@Zoom",date:"2022/05/27/18:00",ato:"00:00:00:00"},
@@ -13,6 +12,18 @@ var contents=[
   {url:"/",title:"【決勝】ハッカソン成果発表@Zoom",date:"2022/06/05/17:30",ato:"00:00:00:00"},
   {url:"/",title:"懇談会",date:"2022/06/05/19:00",ato:"00:00:00:00"}
 ]
+import axios from "axios";
+import React from "react";
+
+const baseURL = "ec2-3-236-196-105.compute-1.amazonaws.com";
+
+export default function App() {
+  const [post, setPost] = React.useState(null);
+  React.useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      setPost(response.data);
+    });
+  }, []);
 
 function Home() {
   return (
