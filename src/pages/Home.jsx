@@ -17,15 +17,12 @@ var list=[
 ]
 
 function Home() {
-  const [contents,setContents] = useState(list);
+  const [contents,setContents] = useState([]);
   useEffect(()=>{
     baseUrl.get("/api/events").then((r)=>{
     setContents(r.data.events)
     })
   },[])
-  console.log(contents)
-
-
   return (
     <div className="Home">
       <div className="group">
@@ -40,7 +37,7 @@ function Home() {
           <Article
             title={i.title}
             date={i.date}
-            url={i.url}
+            id={i.id}
           />
         )
       })}
