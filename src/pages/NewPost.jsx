@@ -16,7 +16,7 @@ const NewPost = () => {
         "date": data.date,
         "note": data.note,
         "url": data.url,
-        // "delete_key": 
+        "delete_key": data.delete_key
       })
         .then(res => {
           console.log(res.data)
@@ -73,6 +73,14 @@ const NewPost = () => {
             {
               errors.url &&
               <Box as="span" color="red" >※urlを貼ってください</Box >
+            }
+          </Box>
+          <Box>
+            <FormLabel htmlFor="delete_key" fontWeight="bold">パスワード</FormLabel>
+            <Input id="delete_key" {...register("delete_key", { required: true })} />
+            {
+              errors.delete_key &&
+              <Box as="span" color="red" >※パスワードを入力してください</Box >
             }
           </Box>
           <Center marginTop={5}>
