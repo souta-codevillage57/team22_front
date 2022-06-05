@@ -42,6 +42,8 @@ const Detail = () => {
     }, 1000)
     return timer
   }
+
+  const time = moment(posts.date).format('YYYY年MM月DD日 HH時mm分ss秒')
   // count(posts.date)//引数にposts.date
 
 
@@ -65,8 +67,8 @@ const Detail = () => {
         <Stack textAlign="center">
           <Text color="teal.900" fontSize="lg" fontWeight="bold">{posts.title}</Text>
           <Text color="teal.900" fontSize="lg">{posts.owner}</Text>
-          <Text color="teal.900" fontSize="lg" fontWeight="bold">{posts.date}</Text>
-          <Text color="teal.900" fontSize="sm">texttexttexttexttexttexttexttexttexttextexttexttexttexttexttext</Text>
+          <Text color="teal.900" fontSize="lg" fontWeight="bold">{time}</Text>
+          <Text color="teal.900" fontSize="sm">{posts.note}</Text>
           <Text color="teal.900" fontSize="sm">{posts.url}</Text>
         </Stack>
         <Box textAlign="right">
