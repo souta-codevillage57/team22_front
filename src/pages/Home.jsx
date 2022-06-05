@@ -1,6 +1,6 @@
-import './App.css';
+import '../css/Home.css';
 import Article from './Article';
-import axios from "axios";
+// import axios from "axios";
 
 var contents=[
   {url:"/",title:"キックオフMTG@Zoom",date:"2022/05/27/18:00",ato:"00:00:00:00"},

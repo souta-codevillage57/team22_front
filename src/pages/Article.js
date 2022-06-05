@@ -33,5 +33,4 @@ function Article(props) {
         </a>
     );
 }
-
 export default Article;
