@@ -41,7 +41,7 @@ function Home() {
           />
         )
       })}
-      <a href="/">
+      <a href="/newPost">
         <div className='plus'>
           <i className="fa-solid fa-plus fa-4x"></i>
         </div>
