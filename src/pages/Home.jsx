@@ -13,17 +13,10 @@ var contents=[
   {url:"/",title:"【決勝】ハッカソン成果発表@Zoom",date:"2022/06/05/17:30",ato:"00:00:00:00"},
   {url:"/",title:"懇談会",date:"2022/06/05/19:00",ato:"00:00:00:00"}
 ]
-// const url = axios.get("ec2-3-236-196-105.compute-1.amazonaws.com")
-//   .then(() => {
-//     console.log("ステータスコード:", status);
-//   })
-//   .catch(err => {
-//         console.log("err:", err);
-//     });
 
 function Home() {
   return (
-    <div className="App">
+    <div className="Home">
       <div class="group">
         <div class="search_bar">
             <i class="fas fa-search search_icon"></i>
