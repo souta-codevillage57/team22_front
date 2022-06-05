@@ -3,10 +3,12 @@ import { useForm } from "react-hook-form";
 import { Input, Textarea, Heading, Center, Box, FormControl, FormLabel } from '@chakra-ui/react'
 import baseUrl from "../apis/baseUrl";
 import PrimaryButton from "../components/PrimaryButton";
+import { useNavigate } from "react-router-dom";
 
 const NewPost = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm()
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     const postData = async () => {
@@ -87,6 +89,7 @@ const NewPost = () => {
             <PrimaryButton type="submit">登録する</PrimaryButton>
           </Center>
         </FormControl>
+        <PrimaryButton onClick={() => { navigate('/') }}>ホームへ戻る</PrimaryButton>
       </Box>
     </>
   )
